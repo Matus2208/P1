@@ -5,12 +5,13 @@ class Button
   int _width;
   int _height;
   PImage meme;
+  float dingdong;
   Button (int X, int Y, int Width, int Height, PImage Img){
     x = X;
     y = Y;
     _width = Width;
     _height = Height;
-    button = Img;
+    meme = Img;
   }
   void show()
   //This function shows the button on the screen
