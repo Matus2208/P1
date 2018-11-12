@@ -17,6 +17,8 @@ class Page {
 
   //This function shows the page on the screen
   void show() {
+    image(page, x, y);
+    image(header, x+37, y);
   }
 
   //This function scrolls the page on the screen
