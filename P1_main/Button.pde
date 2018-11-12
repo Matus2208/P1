@@ -10,7 +10,7 @@ class Button
     y = Y;
     _width = Width;
     _height = Height;
-    img = Img;
+    button = Img;
   }
   void show()
   //This function shows the button on the screen
