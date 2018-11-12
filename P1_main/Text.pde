@@ -5,6 +5,7 @@ class Text
   int _width;
   int _height;
   String textString;
+  
   Text (int X, int Y, int Width, int Height, String text){
     x = X;
     y = Y;
