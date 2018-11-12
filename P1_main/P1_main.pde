@@ -1,9 +1,9 @@
-PImage testButtonImage; //sample image we can use while waiting for images to be done
+PImage Sample;
 
 void setup()
 {
-  testButtonImage = loadImage("SampleButton.png"); 
-  Button btn = new Button(0,0,10,10,testButtonImage);
+  Sample = loadImage("Sample.png"); 
+  Button sample = new Button(0,0,10,10);
 }
 
 void draw()
