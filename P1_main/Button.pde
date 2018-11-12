@@ -4,7 +4,7 @@ class Button
   int y;
   int _width;
   int _height;
-  PImage img;
+  PImage button;
   Button (int X, int Y, int Width, int Height, PImage Img){
     x = X;
     y = Y;
