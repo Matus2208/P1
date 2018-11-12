@@ -4,19 +4,13 @@ class Button
   int y;
   int _width;
   int _height;
-<<<<<<< HEAD
   PImage button;
-  float col;
-=======
-  PImage meme;
-  float dingdong;
->>>>>>> efed92907dc4b796724f3e8df817fbdd4e45b9e6
   Button (int X, int Y, int Width, int Height, PImage Img){
     x = X;
     y = Y;
     _width = Width;
     _height = Height;
-    meme = Img;
+    button = Img;
   }
   void show()
   //This function shows the button on the screen
