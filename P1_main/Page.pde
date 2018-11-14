@@ -23,5 +23,6 @@ class Page {
 
   //This function scrolls the page on the screen
   void scroll() {
+    
   }
 }
