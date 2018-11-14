@@ -24,7 +24,7 @@ Button contactButton;
 
 int buttonX = 40;
 int buttonY = 0;
-int buttonW = 320;
+int buttonW = 310;
 int buttonH = 110;
 
 
