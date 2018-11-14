@@ -11,9 +11,8 @@ class Button {
     y2 = Y2;
   }
 
-  boolean clicked()
-    //Checks if the button is being pressed and returns true if it is
-  {
+  boolean clicked() {
+    //Checks if a button is being pressed and returns true if it is
     if (mouseX > x1 && mouseX < x2 && mouseY > y1 && mouseY < y2) {
       return true;
     } else {

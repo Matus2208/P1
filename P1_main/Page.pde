@@ -1,27 +1,46 @@
 class Page {
 
-  int x;
-  int y;
+  int headerX;
+  int headerY;
+  int pageX;
+  int pageY;
   int w;
   int h;
   PImage page;
   PImage header;
-  Page (int X, int Y, int Width, int Height, PImage Header, PImage Page) {
-    x = X;
-    y = Y;
-    w = Width;
-    h = Height;
+
+  Page (int X1, int Y1, int X2, int Y2, PImage Header, PImage Page) {
+    headerX = X1;
+    headerY = Y1;
+    pageX = X2;
+    pageY = Y2;
+    w = Page.width;
+    h = Page.height;
     header = Header;
     page = Page;
   }
 
-  //This function shows the page on the screen
+  //This function shows the page first, then the header
   void show() {
-    image(page, x, y);
-    image(header, x+37, y);
+    image(page, pageX, pageY, w, h);
+    image(header, headerX, headerY);
+    
+    // Attempt to constrain the page
+    if (pageY > 0) {
+      pageY -= 2;
+    }
+    if (pageY < -h/2){
+      pageY += 2;
+    }
   }
 
   //This function scrolls the page on the screen
-  void scroll() {
+  void scroll(float count) {
+    if (count < 0) {
+      this.pageY += 50;
+    }
+    if (count > 0) {
+      this.pageY -= 50;
+    }
   }
 }

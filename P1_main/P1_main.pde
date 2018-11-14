@@ -21,15 +21,16 @@ Button gamesButton;
 Button supportButton;
 Button contactButton;
 
-
 int buttonX = 40;
 int buttonY = 0;
 int buttonW = 310;
 int buttonH = 110;
 
+float wheelCount;
 
-void setup()
-{
+int pageNumber = 1;
+
+void setup() {
   //size(1920, 1080);
   fullScreen();
   home_header = loadImage("home_header.png");
@@ -43,37 +44,69 @@ void setup()
   contact_header = loadImage("contact_header.png");
   contact_page = loadImage("contact_page.png");
 
-  home = new Page(0, 0, 1920, 1080, home_header, home_page);
-  about = new Page(0, 0, 1920, 1080, about_header, about_page);
-  games = new Page(0, 0, 1920, 1080, games_header, games_page);
-  support = new Page(0, 0, 1920, 1080, support_header, support_page);
-  contact = new Page(0, 0, 1920, 1080, contact_header, contact_page);
+  home = new Page(0+37, 0, 0, 0, home_header, home_page);
+  about = new Page(0+37, 0, 0, 0, about_header, about_page);
+  games = new Page(0+37, 0, 0, 0, games_header, games_page);
+  support = new Page(0+37, 0, 0, 0, support_header, support_page);
+  contact = new Page(0+37, 0, 0, 0, contact_header, contact_page);
 
   homeButton = new Button(buttonX, buttonX+buttonW, buttonY, buttonH);
   aboutButton = new Button(buttonX+buttonW, buttonX+2*buttonW, buttonY, buttonH);
   gamesButton = new Button(buttonX+2*buttonW, buttonX+3*buttonW, buttonY, buttonH);
   supportButton = new Button(buttonX+3*buttonW, buttonX+4*buttonW, buttonY, buttonH);
   contactButton = new Button(buttonX+4*buttonW, buttonX+5*buttonW, buttonY, buttonH);
-  
-  home.show();
 }
 
-void draw()
-{
+void draw() {
+  // Checking for button clicks and reseting pages
   if (mousePressed && homeButton.clicked()) {
-    home.show();
+    pageNumber = 1;
+    home.pageY = 0;
   }
   if (mousePressed && aboutButton.clicked()) {
-    about.show();
+    pageNumber = 2;
+    about.pageY = 0;
   }
   if (mousePressed && gamesButton.clicked()) {
-    games.show();
+    pageNumber = 3;
+    games.pageY = 0;
   }
   if (mousePressed && supportButton.clicked()) {
-    support.show();
+    pageNumber = 4;
+    support.pageY = 0;
   }
   if (mousePressed && contactButton.clicked()) {
-    contact.show();
+    pageNumber = 5;
+    contact.pageY = 0;
   }
+  // Displaying the corresponding page
+  switch(pageNumber) {
+  case 1: 
+    home.show();
+    home.scroll(wheelCount);
+    break;
+  case 2: 
+    about.show();
+    about.scroll(wheelCount);
+    break;
+  case 3:
+    games.show();
+    games.scroll(wheelCount);
+    break;
+  case 4:
+    support.show();
+    support.scroll(wheelCount);
+    break;
+  case 5:
+    contact.show();
+    contact.scroll(wheelCount);
+    break;
+  }
+  wheelCount = 0;
 }
-//println(mouseX,mouseY);
+
+// Checking for mouse wheel event
+
+void mouseWheel(MouseEvent event) {
+  wheelCount = event.getCount();
+}
