@@ -2,15 +2,15 @@ class Text
 {
   int x;
   int y;
-  int _width;
-  int _height;
+  int w;
+  int h;
   String textString;
   
   Text (int X, int Y, int Width, int Height, String text){
     x = X;
     y = Y;
-    _width = Width;
-    _height = Height;
+    w = Width;
+    h = Height;
     textString = text;
   }
   void show()

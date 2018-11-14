@@ -22,10 +22,11 @@ Button supportButton;
 Button contactButton;
 
 
-int buttonX = 0;
+int buttonX = 40;
 int buttonY = 0;
-int buttonW;
-int buttonH;
+int buttonW = 320;
+int buttonH = 110;
+
 
 void setup()
 {
@@ -48,18 +49,31 @@ void setup()
   support = new Page(0, 0, 1920, 1080, support_header, support_page);
   contact = new Page(0, 0, 1920, 1080, contact_header, contact_page);
 
-  homeButton = new Button(buttonX, buttonY, buttonW, buttonH);
-  homeButton = new Button(buttonX+buttonW, buttonY, buttonW, buttonH);
-  homeButton = new Button(buttonX+2*buttonW, buttonY, buttonW, buttonH);
-  homeButton = new Button(buttonX+3*buttonW, buttonY, buttonW, buttonH);
-  homeButton = new Button(buttonX+4*buttonW, buttonY, buttonW, buttonH);
+  homeButton = new Button(buttonX, buttonX+buttonW, buttonY, buttonH);
+  aboutButton = new Button(buttonX+buttonW, buttonX+2*buttonW, buttonY, buttonH);
+  gamesButton = new Button(buttonX+2*buttonW, buttonX+3*buttonW, buttonY, buttonH);
+  supportButton = new Button(buttonX+3*buttonW, buttonX+4*buttonW, buttonY, buttonH);
+  contactButton = new Button(buttonX+4*buttonW, buttonX+5*buttonW, buttonY, buttonH);
+  
+  home.show();
 }
 
 void draw()
 {
-  home.show();
+  if (mousePressed && homeButton.clicked()) {
+    home.show();
+  }
+  if (mousePressed && aboutButton.clicked()) {
+    about.show();
+  }
+  if (mousePressed && gamesButton.clicked()) {
+    games.show();
+  }
+  if (mousePressed && supportButton.clicked()) {
+    support.show();
+  }
+  if (mousePressed && contactButton.clicked()) {
+    contact.show();
+  }
 }
-
-void mousePressed()
-{
-}
+//println(mouseX,mouseY);
