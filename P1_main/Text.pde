@@ -13,14 +13,9 @@ class Text
     h = Height;
     textString = text;
   }
-  
+  void show()
   //This function shows the text on the screen
-  void show()  {
-    textSize(26);
-    text(textString, x, y);
-  }
-  
-  void setY(int textY) {
-    y = textY;
+  {
+    
   }
 }
