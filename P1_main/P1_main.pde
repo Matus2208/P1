@@ -21,6 +21,11 @@ Button gamesButton;
 Button supportButton;
 Button contactButton;
 
+Text homeText1;
+int homeText1Y = 1000;
+Text homeText2;
+int homeText2Y = 1500;
+
 int buttonX = 40;
 int buttonY = 0;
 int buttonW = 310;
@@ -55,6 +60,9 @@ void setup() {
   gamesButton = new Button(buttonX+2*buttonW, buttonX+3*buttonW, buttonY, buttonH);
   supportButton = new Button(buttonX+3*buttonW, buttonX+4*buttonW, buttonY, buttonH);
   contactButton = new Button(buttonX+4*buttonW, buttonX+5*buttonW, buttonY, buttonH);
+  //(int X, int Y, int Width, int Height, String text)
+  homeText1 = new Text(50, 0, 100, 100, "Text1");
+  homeText2 = new Text(50, 0, 100, 100, "Text2");
 }
 
 void draw() {
@@ -84,6 +92,10 @@ void draw() {
   case 1: 
     home.show();
     home.scroll(wheelCount);
+    homeText1.setY(homeText1Y + home.getY());
+    homeText1.show();
+    homeText2.setY(homeText2Y + home.getY());
+    homeText2.show();
     break;
   case 2: 
     about.show();
