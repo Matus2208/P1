@@ -45,8 +45,4 @@ class Page {
       this.pageY -= 50;
     }
   }
-  
-  int getY() {
-    return pageY;
-  }
 }

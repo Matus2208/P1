@@ -92,9 +92,9 @@ void draw() {
   case 1: 
     home.show();
     home.scroll(wheelCount);
-    homeText1.setY(homeText1Y + home.getY());
+    homeText1.setY(homeText1Y + home.pageY);
     homeText1.show();
-    homeText2.setY(homeText2Y + home.getY());
+    homeText2.setY(homeText2Y + home.pageY);
     homeText2.show();
     break;
   case 2: 
