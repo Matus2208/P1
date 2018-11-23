@@ -15,7 +15,7 @@ class Button {
   
   //This function checks if the mouse is clicked inside the button
   boolean clicked() {
-    if (mouseX > x1 && mouseX < x2 && mouseY > y1 && mouseY < y2) {
+    if (mousePressed & mouseX > x1 && mouseX < x2 && mouseY > y1 && mouseY < y2) {
       return true;
     } else {
       return false;

@@ -8,7 +8,8 @@ class Page {
   int h;
   PImage page;
   PImage header;
-  
+  float scrollSpeed = height/10;
+
   //Constructor
   Page (int X1, int Y1, int X2, int Y2, PImage Header, PImage Page) {
     headerX = X1;
@@ -26,7 +27,16 @@ class Page {
     background(10, 46, 64);     //background color to hide images in the background
     image(page, pageX, pageY, w, h);
     image(header, headerX, headerY);
+  }
 
+  //This function scrolls the page on the screen
+  void scroll(float count) {
+    if (count < 0) {
+      this.pageY += scrollSpeed;
+    }
+    if (count > 0) {
+      this.pageY -= scrollSpeed;
+    }
     // Attempt to constrain the page
     if (pageY > 0) {  
       pageY -= 2;
@@ -34,19 +44,5 @@ class Page {
     if (pageY < (-h)+height) { //height of the image - height of the display
       pageY += 2;
     }
-  }
-
-  //This function scrolls the page on the screen
-  void scroll(float count) {
-    if (count < 0) {
-      this.pageY += 50;
-    }
-    if (count > 0) {
-      this.pageY -= 50;
-    }
-  }
-  
-  int getY() {
-    return pageY;
   }
 }
