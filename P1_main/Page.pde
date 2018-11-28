@@ -32,10 +32,10 @@ class Page {
   //This function scrolls the page on the screen
   void scroll(float count) {
     if (count < 0) {
-      this.pageY += scrollSpeed;
+      pageY += scrollSpeed;
     }
     if (count > 0) {
-      this.pageY -= scrollSpeed;
+      pageY -= scrollSpeed;
     }
     // Attempt to constrain the page
     if (pageY > 0) {  
