@@ -47,11 +47,11 @@ void setup() {
   contact_header = loadImage("contact_header.png");
   contact_page = loadImage("contact_page.png");
 
-  home = new Page(0+37, 0, 0, 0, home_header, home_page);
-  about = new Page(0+37, 0, 0, 0, about_header, about_page);
-  games = new Page(0+37, 0, 0, 0, games_header, games_page);
-  support = new Page(0+37, 0, 0, 0, support_header, support_page);
-  contact = new Page(0+37, 0, 0, 0, contact_header, contact_page);
+  home = new Page(0, 0, 0, 0, home_header, home_page);
+  about = new Page(0, 0, 0, 0, about_header, about_page);
+  games = new Page(0, 0, 0, 0, games_header, games_page);
+  support = new Page(0, 0, 0, 0, support_header, support_page);
+  contact = new Page(0, 0, 0, 0, contact_header, contact_page);
 
   homeButton = new Button(buttonX, buttonX+buttonW, buttonY, buttonH);
   aboutButton = new Button(buttonX+buttonW, buttonX+2*buttonW, buttonY, buttonH);
