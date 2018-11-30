@@ -31,18 +31,11 @@ class Page {
 
   //This function scrolls the page on the screen
   void scroll(float count) {
-    if (count < 0) {
+    if (count < 0 && pageY < 0) {
       pageY += scrollSpeed;
     }
-    if (count > 0) {
+    if (count > 0 && pageY > (-h)+height) {
       pageY -= scrollSpeed;
-    }
-    // Attempt to constrain the page
-    if (pageY > 0) {  
-      pageY -= 2;
-    }
-    if (pageY < (-h)+height) { //height of the image - height of the display
-      pageY += 2;
     }
   }
 }
