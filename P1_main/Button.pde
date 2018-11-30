@@ -1,9 +1,9 @@
 class Button {
 
-  int x1;
-  int y1;
-  int x2;
-  int y2;
+  int x1;    //Button's left side x value
+  int y1;    //Button's top y value
+  int x2;    //Button's right side x value
+  int y2;    //Button's bottom y value
   
   //Constructor
   Button (int X1, int X2, int Y1, int Y2) {
