@@ -24,7 +24,6 @@ class Page {
 
   //This function shows the page first, then the header
   void show() {
-    background(10, 46, 64);     //background color to hide images in the background
     image(page, pageX, pageY, w, h);
     image(header, headerX, headerY);
   }

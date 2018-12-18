@@ -21,9 +21,6 @@ Button gamesButton;
 Button supportButton;
 Button contactButton;
 
-int homeText1Y = 1000;
-int homeText2Y = 1500;
-
 int buttonX = 40;
 int buttonY = 0;
 int buttonW = 310;
@@ -34,7 +31,6 @@ float wheelCount;
 int pageNumber = 1;
 
 void setup() {
-  //size(1920, 1080);
   fullScreen();
   home_header = loadImage("home_header.png");
   home_page = loadImage("home_page.png");
